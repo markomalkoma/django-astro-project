@@ -25,6 +25,7 @@ moment=re.compile(r'''
 ''', re.X) 
 
 
+
 sign={
 'a':'Aries',
 'b':'Taurus',
