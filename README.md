@@ -4,7 +4,7 @@
 
 #### Astro-project is aimed at discovering probabilities of astrological aspect's rates of certain people categories that can be hardly explained by pure chance.
 
-##### About
+### About
 
  A few years ago, I decided to go through famous lectures on physics by Richard Feynman. 
  Probably no one ever did a better job with an effort to explain this complicated subject from the start. 
