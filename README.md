@@ -1,6 +1,6 @@
 ### ASTRO PROJECT
 
-### Django/HTML/CSS
+### Python/Django/HTML/CSS
 
 #### Astro-project is aimed at discovering probabilities of astrological aspect's rates of certain people categories that can be hardly explained by pure chance.
 
