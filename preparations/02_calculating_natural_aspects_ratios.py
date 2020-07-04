@@ -143,7 +143,7 @@ for a in planets:
             elif l<d1<h:
                 ops+=1
 
-
+                
         aspects_all=con+sex+sqr+trg+ops
         print('\nPROBABILITIES FOR '+a.upper()+' AND '+b.upper()+':\n')
         print('Conjuction:\t'+str(round(con/loop*100, 2))+'%')
