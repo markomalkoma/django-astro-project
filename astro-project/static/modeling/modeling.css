@@ -1,0 +1,52 @@
+body {font-family: 'Open Sans'; font-weight: 100; }
+
+a {
+text-decoration: none;
+color: black;
+}
+
+
+h4.aspect_header, h3.aspect_header {text-transform: uppercase; }
+
+th, td {width: 200px; text-align: left}
+
+.big {font-size: 22px}
+
+.bigy {font-size: 16px}
+
+p.upper {text-transform: capitalize; font-size: 16px}
+
+.small {font-size: 10px}
+.smally {font-size: 12px}
+
+.twenty {float:left; width: 15%;  margin-right: 5%;}
+.eighty {float:left; width: 78%;  margin-right: 2%;}
+
+input[type=submit] {
+float: left;
+color: #333333;
+background-color: white;
+display: block;
+font-size: 14px;
+padding:7px 7px 7px 7px;
+text-align: center;
+width: 50%;
+border: 1px solid black;
+border-radius: 4px;
+}
+
+input[type=submit]:hover {
+background-color: #333333;
+color: white;
+cursor: pointer;
+}
+
+select {font-size: 14px; font-family: 'Open Sans'; border-radius: 4px;}
+
+.alert {color: #cc0066; font-size: 20px; font-weight: 700;}
+
+.text {text-align: justify;}
+
+.group {color: #3366ff}
+
+.line {border-color: #e6f2ff}
