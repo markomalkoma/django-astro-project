@@ -1,6 +1,6 @@
 #### Astro project is aimed at discovering probabilities that can be hardly explained by pure chance. There are three types of searches.</p>
 
-Before choosing one of three options, check one or more categories on which you want to apply search.</p>
+- Before choosing one of three options, check one or more categories on which you want to apply search.</p>
 
 1. The first option is COMPLETE that lists all possible aspects for that group. This is the best starting option. The first column displays the general ratio of an aspect. The second column displays the ratio presented in the searched categories. The third column displays the probability that aspect would be present with the ratio calculated for that group or higher. The fourth column displays the probability that aspect would be present with the ratio calculated for that group or lower. Probabilities bellow 0.1 are bolded.
 2. The second option is DOMINANT. This section compares shares of two aspects for chosen categories. The third column displays the probability that matching aspect would be dominant with share calculated for that group, or higher. Probabilities bellow 0.1 are bolded.
