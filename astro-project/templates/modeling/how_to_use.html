@@ -1,0 +1,26 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+
+<span class='bigy' >
+	by Marko Pavlović
+	
+	</span>
+	
+	<hr style="border-color: #e6f2ff">
+<br>
+
+<div class="text">
+<p>Astro project is aimed at discovering probabilities that can be hardly explained by pure chance. There are three types of searches.</p>
+<p>Before choosing one of three options, check one or more categories on which you want to apply search.</p>
+
+<p>I. The first option is COMPLETE that lists all possible aspects for that group. This is the best starting option. The first column displays the general ratio of an aspect. The second column displays the ratio presented in the searched categories. The third column displays the probability that aspect would be present with the ratio calculated for that group or higher. The fourth column displays the probability that aspect would be present with the ratio calculated for that group or lower. Probabilities bellow 0.1 are bolded.</p>
+<p>II. The second option is DOMINANT. This section compares shares of two aspects for chosen categories. The third column displays the probability that matching aspect would be dominant with share calculated for that group, or higher. Probabilities bellow 0.1 are bolded.</p>
+<p>III. The third option is COMBINED. With this approach one, after choosing minimum 3, and maximum 5 celestial bodies, allows the program to discover combinations of planets with the lowest probabilities. Numbers in brackets correspond to the presence or absence of an aspect (0 is absent, 1 is present). P(rate &#8805 GR) represents the probability that the rate would be equal to or greater than the group rate. Be cautious with this approach, especially with categories that contain a small number of members. Results are ordered from the least probable one. Choose the number of results that you want. This option takes into account any aspect between two planets (making calculations for particular aspect would tremendously prolong running time).</p>
+</div>
+
+
+
+
+
+
+{% endblock b1 %}

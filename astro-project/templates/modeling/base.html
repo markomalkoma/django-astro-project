@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'modeling/modeling.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Astro project</title>
+</head>
+<body>
+	<div>
+	<div class='twenty' style="font-size: 46px; ">
+		
+		<a href="https://github.com/markomalkoma/django-astro-project" target='_blank' class="fa fa-github" target='_blank' ></a>
+
+	</div>	
+
+	<div class='eighty' style="font-size: 56px; font-family: parisienne; text-align: center">
+		<a href="{% url 'blanco' %}">Astro Project</a>
+	</div>
+	</div>
+	
+	<div class='twenty'>
+		
+		<span class='bigy'>
+			<a href="{% url 'handler' %}">How to use astro project?</a>
+		</span>
+		<h5><a href="{% url 'about' %}">About</a></h5>
+		<br>
+		<form action="/redirector/" method="post">
+			{% csrf_token %}
+				{% for message in messages %}
+		            <div class="alert">
+                        <span class="bigy" >{{ message }}</span>
+                    </div>
+            {% endfor %}
+			<h3>
+				Categories
+			</h3>
+			{% for type in types %}
+				<input type="checkbox" id="{{type.name}}" name="categories" value="{{type.name}}">
+  				<label for="{{type.name}}">{{ type.name }}</label><br>
+  			{% endfor %}
+			<br>
+			<hr class="line">
+			
+			<br>
+			<h3>
+				Complete
+			</h3>
+			<input type="submit" name="complete" value="Calculate">
+			
+			<br><br><br>
+			<hr class="line">
+			<br>
+			
+			<h3>
+				Dominance
+			</h3>
+			<p><span>planet 1</span>
+			<select id="planet1" name="planet1">
+			 	{% for planet in planets %}
+    			<option value="{{ planet }}">{{ planet }}</option>
+    			{% endfor %}
+    		</select></p>
+    		
+    		<p><span>aspect 1</span>
+			<select id="aspect1" name="aspect1">
+			 	<option value="5">all</option>
+    			<option value="0">conjuction</option>
+    			<option value="1">sextile</option>
+    			<option value="2">square</option>
+    			<option value="3">trine</option>
+    			<option value="4">opposition</option>	
+    		</select></p>
+			
+			<p><span>planet 2</span>
+    		<select id="planet2" name="planet2">
+    			{% for planet in planets %}
+    			<option value="{{ planet }}">{{ planet }}</option>
+    			{% endfor %}
+    		</select></p>
+    		
+    		<br>
+			
+			<p><span>planet 3</span>
+    		<select id="planet3" name="planet3">
+    			{% for planet in planets %}
+    			<option value="{{ planet }}">{{ planet }}</option>
+    			{% endfor %}
+    		</select></p>
+    		
+    		<p><span>aspect 2</span>
+			<select id="aspect2" name="aspect2">
+			 	<option value="5">all</option>
+    			<option value="0">conjuction</option>
+    			<option value="1">sextile</option>
+    			<option value="2">square</option>
+    			<option value="3">trine</option>
+    			<option value="4">opposition</option>
+    		</select></p>
+			<p><span>planet 4</span>
+    		
+    		<select id="planet4" name="planet4">	
+    			{% for planet in planets %}
+    			<option value="{{ planet }}">{{ planet }}</option>
+    			{% endfor %}
+    		</select></p>
+    		<br>
+    		<input type="submit" name="dominant" value="Calculate">
+			
+			<br><br><br>
+			<hr class="line">
+			<br>
+
+			<h3>
+				Combined
+			</h3>
+			{% for planet in planets %}
+			<input type="checkbox" id="{{planet}}" name="planets" value="{{planet}}" >
+  			<label for="{{planet}}">{{ planet }}</label><br>
+  			{% endfor %}
+  			<br>
+  			
+  			<span>number of results</span>
+  			<select id="{{number}}" name="numbers">
+    		{% for number in results %}
+    		<option value="{{ number }}">{{ number }}</option>
+    		{% endfor %}
+    		</select>
+  			<br><br>
+			<input type="submit" name="combined" value="Calculate">
+		</form>
+		
+		<br><br><br><br><br>
+
+	</div>
+	<div class='eighty'>
+		{% block b1 %}{% endblock b1 %}
+	</div>
+
+</body>
+</html>

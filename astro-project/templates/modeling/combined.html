@@ -1,0 +1,60 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+	
+<span class='bigy'>
+	Group:
+	{% for category in categories %}
+		<span>{{category}}</span>
+		{% if forloop.counter < categories|length %}
+		<span>, </span>
+		{% endif %} 
+	{% endfor %}
+	
+</span>
+
+	<br>
+<span class='bigy'  >
+	<hr style="border-color: #e6f2ff">
+
+	{% for planet in planetas %}
+		<span style="text-transform: capitalize;">{{planet}}</span>
+		{% if forloop.counter < planetas|length %}
+		<span>, </span>
+		{% endif %}
+	{% endfor %}
+	
+</span>
+
+	<br><br>
+
+{% for pack in complete %}
+		<p><b>{{ forloop.counter }}</b></p>
+		[{% for planetas in pack.0.2 %}
+		<span>{{ planetas.0|capfirst }} <span class='smally' style="color: #3366ff">asp</span> {{ planetas.1|capfirst }}</span>
+		{% if forloop.counter < pack.0.2|length %}
+		<span>, </span>
+		{% endif %} 
+		{% endfor %}]
+		<p>{{pack.0.1}}</p>
+		<p>P(rate &#8805 GR) = {{pack.1}}</p>
+		<p onclick="hiden('{{forloop.counter}}')" style="cursor:pointer; color: #3366ff"">{{pack.0.0}} objects</p>
+		<div id='hiden_{{ forloop.counter }}' style="display: none">
+		<p class="smally" onclick="closer('{{forloop.counter}}')" style="cursor:pointer; color: #3366ff">close</p>
+		{% for human in pack.0.3 %}
+		<p><a href="{% url 'detail' hid=human.id%}">{{human.name}} {{human.surname}}</a></p>
+		{% endfor %}
+		</div>
+		<br>
+{% endfor %}
+	
+<script>
+function hiden(p) {
+var hidenko = 'hiden_var'.replace('var',p);
+document.getElementById(hidenko).style.display = "block";
+}
+function closer(p) {
+var hidenko = 'hiden_var'.replace('var',p);
+document.getElementById(hidenko).style.display = "none";
+}
+</script>	
+{% endblock b1 %}

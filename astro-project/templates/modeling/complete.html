@@ -1,0 +1,83 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+<span class='bigy'>
+	Group: 
+	{% for category in categories %}
+		{{category}}
+		{% if forloop.counter < categories|length %}
+		<span>, </span>
+		{% endif %} 
+	{% endfor %}
+	<hr class='line'>
+</span>
+	<h5><a class="group"  href="group/">{{people|length}} objects</a></h5>
+	<br>
+	{% for p in planetarium %}
+	<h3 class='aspect_header'>{{p.1}} - {{p.2}} aspect</h3>
+	
+	<table>
+		<tr>
+			<th>Aspect</th>
+			<th>Natural rate</th>
+			<th>Group rate (GR)</th>
+			<th>P(rate &#8805 GR)</th>
+			<th>P(rate &#8804 GR)</th>
+		</tr>
+		<tr>
+			<td>Conjuction</td>
+			<td>{{p.3}}</td>
+			<td>{{p.9}}</td>
+			<td>{{p.15}}</td>
+			<td>{{p.21}}</td>
+		</tr>
+		<tr>
+			<td>Sextile</td>
+			<td>{{p.4}}</td>
+			<td>{{p.10}}</td>
+			<td>{{p.16}}</td>
+			<td>{{p.22}}</td>
+		</tr>
+		<tr>
+			<td>Square</td>
+			<td>{{p.5}}</td>
+			<td>{{p.11}}</td>
+			<td>{{p.17}}</td>
+			<td>{{p.23}}</td>
+		</tr>
+		<tr>
+			<td>Trine</td>
+			<td>{{p.6}}</td>
+			<td>{{p.12}}</td>
+			<td>{{p.18}}</td>
+			<td>{{p.24}}</td>
+		</tr>
+		<tr>
+			<td>Opposition</td>
+			<td>{{p.7}}</td>
+			<td>{{p.13}}</td>
+			<td>{{p.19}}</td>
+			<td>{{p.25}}</td>
+		</tr>
+		<tr>
+			<td>All</td>
+			<td>{{p.8}}</td>
+			<td>{{p.14}}</td>
+			{% if p.20 < 0.1 %}
+			<td><b>{{p.20}}<b></td>
+			{% else %}
+			<td>{{p.20}}</td>
+			{% endif %}
+			{% if p.26 < 0.1 %}
+			<td><b>{{p.26}}<b></td>
+			{% else %}
+			<td>{{p.26}}</td>
+			{% endif %}
+		</tr>
+	</table>
+	<br>
+	<br>
+	{% endfor %}
+
+
+{% endblock b1 %}
+

@@ -1,0 +1,30 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+	
+	<hr class="line">
+	<br>
+	<p style="font-size: 30px; font-weight: 300; text-align: center;">{{human.name}} {{human.surname}}</p>
+	<p style="text-align: center;">
+	{% for cat in human.category.all %}
+		{{cat}} 
+	{% if forloop.counter < human.category.all|length %}
+		<span>, </span>
+	{% endif %}  
+	{% endfor %}</p>
+	<p style="font-size: 20px; text-align: center;">{{month}} {{human.day}}, {{human.year}} {% if human.year < 1600 %}<span class='small'>JULIAN</span>{% else %}<span class='small'>GREGORIAN</span>{% endif %}</p>
+	{% if human.precise %}
+	<p style="font-size: 20px; text-align: center;">{{ human.hour }}:{{ human.minutes }} UTC</p>
+	{% else %}
+	<p style="text-align: center;">time unknown</p>
+	{% endif %}
+	<br>
+	
+	
+
+	{% for aspect in aspects %}
+		<p class='upper' style="text-align: center;"><span>{{ aspect.0 }}</span> {{ aspect.1 }} <span class='small' style="color: #3366ff">{{aspect.2}}<sup>o</sup></span></p>
+	{% endfor %}
+
+
+
+{% endblock b1 %}

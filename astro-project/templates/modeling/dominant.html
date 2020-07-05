@@ -1,0 +1,99 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+
+
+
+	<span class='bigy' style="text-transform: capitalize;">
+	Group:
+	{% for category in categories %}
+		{{category}} 
+		{% if forloop.counter < categories|length %}
+		<span>, </span>
+		{% endif %} 
+	{% endfor %}
+	</span>
+	<hr class="line">
+	<h5>{{ humans.2|length }} objects</h5>
+	<br>
+
+	<h3 class='aspect_header'>{{planetas.0.0}} {{ aspects.0 }} {{planetas.0.1}}  DOMINANCE</h3>
+	
+	<table>
+		<tr>
+			<th>Natural share</th>
+			<th>Group share (GR)</th>
+			<th>P(share &#8805 GR)</th>
+			<th onclick="hidentor_0()" style="cursor:pointer;">Objects</th>
+		</tr>
+		<tr>
+			<td>{{rates.0}}</td>
+			<td>{{rates.2}} / {{rates.4}} = {{rates.5}}</td>
+			{% if probas.0 < 0.1 %}
+			<td><b>{{ probas.0 }}</b></td>
+			{% else %}
+			<td>{{ probas.0 }}</td>
+			{% endif %}
+			<td onclick="hidentor_0()" style="cursor:pointer;color: #3366ff;">{{humans.0|length}}</td>
+		</tr>
+	</table>
+
+		<br><br>
+		
+	<div id='hiden_0' style="display: none">
+		<p onclick="closer_0()" class='smally' style="cursor:pointer;  color: #3366ff;">close</p>
+		{% for human in humans.0 %}
+		<p ><a  href="{% url 'detail' hid=human.id%}">{{human.name}} {{human.surname}} </a></p>
+		{% endfor %}
+		<br><br>
+	</div>
+		
+	<h3 class='aspect_header'>{{planetas.1.0}} {{ aspects.1 }} {{planetas.1.1}}  DOMINANCE</h3>
+	<table>
+		<tr>
+			<th>Natural share</th>
+			<th>Group share (GR)</th>
+			<th>P(share &#8805 GR)</th>
+			<th onclick="hidentor_1()" style="cursor:pointer;">Objects</th>
+		</tr>
+		<tr>
+			<td>{{rates.1}}</td>
+			<td>{{rates.3}} / {{rates.4}} = {{rates.6}}</td>
+			{% if probas.1 < 0.1 %}
+			<td><b>{{ probas.1 }}</b></td>
+			{% else %}
+			<td>{{ probas.1 }}</td>
+			{% endif %}
+			<td onclick="hidentor_1()" style="cursor:pointer;color: #3366ff;">{{humans.1|length}}</td>
+		</tr>
+	</table>
+
+		<br><br>
+	
+	<div id='hiden_1' style="display: none">
+		<p onclick="closer_1()" class='smally' style="cursor:pointer;  color: #3366ff;">close</p>
+		{% for human in humans.1 %}
+		<p><a  href="{% url 'detail' hid=human.id%}">{{human.name}} {{human.surname}} </a></p>
+		{% endfor %}
+			
+		<br><br>
+
+	</div>
+
+
+
+<script>
+function hidentor_0() {
+document.getElementById("hiden_0").style.display = "block";
+}
+function closer_0() {
+document.getElementById("hiden_0").style.display = "none";
+}
+function hidentor_1() {
+document.getElementById("hiden_1").style.display = "block";
+}
+function closer_1() {
+document.getElementById("hiden_1").style.display = "none";
+}
+</script>
+
+{% endblock b1 %}

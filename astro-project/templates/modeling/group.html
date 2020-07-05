@@ -1,0 +1,24 @@
+{% extends 'modeling/base.html' %}
+{% block b1 %}
+
+<span class='bigy'>
+	Group: 
+	{% for category in categories %}
+		{{category}}
+		{% if forloop.counter < categories|length %}
+			<span>, </span>
+		{% endif %} 
+	{% endfor %}
+	<hr class="line">
+</span>
+	
+<h5>{{people|length}} objects</h5>
+	
+	
+{% for human in people %}
+	<p><a href="{% url 'detail' hid=human.id%}">{{human.name}} {{human.surname}}</a></p>
+{% endfor %}
+
+
+{% endblock b1 %}
+
