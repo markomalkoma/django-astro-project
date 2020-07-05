@@ -1,4 +1,4 @@
-### Astro project is aimed at discovering probabilities that can be hardly explained by pure chance. There are three types of searches.</p>
+#### Astro project is aimed at discovering probabilities that can be hardly explained by pure chance. There are three types of searches.</p>
 
 Before choosing one of three options, check one or more categories on which you want to apply search.</p>
 
