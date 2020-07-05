@@ -1,6 +1,6 @@
 ### ASTRO PROJECT
 
-### Python/Django/HTML/CSS
+### Python/Django/HTML/CSS/JS
 
 ### https://astroaspects.herokuapp.com/
 
