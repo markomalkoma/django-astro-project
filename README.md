@@ -65,7 +65,7 @@
  and all 3 aspects with 8 present-absent possibilities. The total number of combinations is in a case of three Astro objects 12+8=20. 
  In a case of four planets, the number of combinations is 728, for five planets, the number is 56,252, and for six 14,381,674. 
  Especially in a case of small groups, one in the abundance of low probable combinations would appear. Along with putting pressure on server running time, 
- this was one of the reasons for limiting the number of Astro objects to six in this type of investigation. 
+ this was one of the reasons for limiting the number of Astro objects to five in this type of investigation. 
  It has to be taken into account that some aspects are generational and stay there for years or decades. 
  Most of the people included in the study would be ones born in 19. or 20. century, 
  so some more distant planets (Neptune, Uranus, Pluto) aspects would decrease probabilities just by this fact.
